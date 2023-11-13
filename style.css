@@ -1,0 +1,15 @@
+body {
+  padding: 20px;
+}
+
+.carousel-inner,
+.container-fluid,
+.container,
+.row {
+  padding: 20px; /* Adjust as needed */
+}
+
+#result {
+  margin-top: 20px;
+  font-weight: bold;
+}
