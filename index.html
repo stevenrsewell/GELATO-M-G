@@ -46,30 +46,41 @@
   <div id="aboutSection" class="container mt-2 mb-2 pt-2">
     <div class="row">
       <div class="col-md-12">
-        <h1 style="text-decoration: underline;">About</h1>
+        <h1>About</h1>
       </div>
     </div>
     <div class="row">
       <div class="col-md-6">
-        <p>GELATO-M-G! is an Ice Cream and Gelato mixology website, showcasing unique flavor combinations and how well
-          they taste together. Ice Cream mixology refers to the creative and experimental blending of various
-          ingredients to create unique and innovative flavors. It involves combining different flavors, textures, and
-          ingredients to produce exciting and unconventional frozen treats. This culinary approach goes beyond
-          traditional ice cream or gelato offerings, allowing for the development of imaginative and customized frozen
-          desserts. From exotic fruit infusions to unexpected savory notes, this mixology offers a realm of
-          possibilities for those seeking a new and indulgent experience in frozen treats.</p>
+        <p>GELATO-M-G! is a Gelato and Ice Cream mixology site, showcasing unique flavor combinations and how well
+          they taste together. Ice cream and gelato mixology involves the art of creating unique and innovative flavors
+          by blending different ingredients, flavors, and textures to produce delicious frozen treats. It's a creative process that goes
+          beyond traditional recipes, allowing for experimentation with various combinations of ingredients to achieve
+          distinct tastes and textures.From exotic fruit infusions to unexpected savory notes, this mixology offers a
+          realm of possibilities for those seeking a new and indulgent experience in frozen treats.</p>
       </div>
-      <div class="col-md-6">
-        <p>Aspects of Ice Cream Mixology:
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">Flavors - Mixologists experiment with a wide range of flavors, both traditional
-            and unconventional, to create savory combinations</li>
-          <li class="list-group-item">Textures - Mixologists consider various mix-ins such as chunks of cookies, nuts,
-            candy, and frozen fruit bits to create a satisfying mouthfeel</li>
-          <li class="list-group-item">Presentation - An essential part of mixology, the presence of vibrant colors,
-            artistic swirls, or visually striking toppings add to appeal</li>
-        </ul>
-        </p>
+      <div class="col-md-6 pb-2">
+        <h4>Aspects of Ice Cream Mixology:</h4>
+        <div class="d-flex align-items-start pt-3">
+          <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home"
+              type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Flavors</button>
+            <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile"
+              type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Textures</button>
+            <button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages"
+              type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">Presentation</button>
+          </div>
+          <div class="tab-content" id="v-pills-tabContent">
+            <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+              Mixologists experiment with a wide range of flavors, both traditional
+              and unconventional, to create savory combinations</div>
+            <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+              Mixologists consider various mix-ins such as chunks of cookies, nuts,
+              candy, and frozen fruit bits to create a satisfying mouthfeel</div>
+            <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">An
+              essential part of mixology, the presence of vibrant colors,
+              artistic swirls, or visually striking toppings add to appeal</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -78,13 +89,13 @@
   <div id="mixologySection" class="container mt-2 mb-2 pt-2 pb-2">
     <div class="row">
       <div class="col-md-12">
-        <h1 style="text-decoration: underline;">Mixology</h1>
+        <h1>Mixology</h1>
       </div>
     </div>
     <div class="row align-items-center">
       <div class="col-md-4">
         <label for="dropdown1">Flavor 1:</label>
-        <select class="form-control" id="dropdown1" onchange="updateImages(); updateText();">
+        <select class="form-control bg-dark text-light" id="dropdown1" onchange="updateImages(); updateText();">
           <option value="" selected disabled>Please select</option>
           <option value="vanilla">Vanilla</option>
           <option value="chocolate">Chocolate</option>
@@ -104,7 +115,7 @@
       </div>
       <div class="col-md-4">
         <label for="dropdown2">Flavor 2:</label>
-        <select class="form-control" id="dropdown2" onchange="updateImages(); updateText();">
+        <select class="form-control bg-dark text-light" id="dropdown2" onchange="updateImages(); updateText();">
           <option value="" selected disabled>Please select</option>
           <option value="vanilla">Vanilla</option>
           <option value="chocolate">Chocolate</option>
@@ -127,12 +138,12 @@
   <div id="topCombinations" class="container mt-2 pt-3">
     <div class="row">
       <div class="col-md-12">
-        <h1 style="text-decoration: underline;">Top Combinations</h1>
+        <h1>Top Combinations</h1>
       </div>
     </div>
     <div class="row">
       <div class="col-md-4 d-flex">
-        <div class="card mb-3 flex-fill">
+        <div class="card mb-3 flex-fill bg-dark text-light">
           <div class="card-body">
             <h3 class="card-title">Mint Chocolate & Coffee</h3>
             <p class="card-text">The combination of mint chocolate chip and coffee ice cream creates a tantalizing
@@ -144,7 +155,7 @@
       </div>
 
       <div class="col-md-4 d-flex">
-        <div class="card mb-3 flex-fill">
+        <div class="card mb-3 flex-fill bg-dark text-light">
           <div class="card-body">
             <h3 class="card-title">Chocolate & Banana</h3>
             <p class="card-text">This combination offers a delightful harmony of rich cocoa and sweet, creamy banana
@@ -157,7 +168,7 @@
       </div>
 
       <div class="col-md-4 d-flex">
-        <div class="card mb-3 flex-fill">
+        <div class="card mb-3 flex-fill bg-dark text-light">
           <div class="card-body">
             <h3 class="card-title">Vanilla & Hazelnut</h3>
             <p class="card-text">The smooth, classic vanilla undertones provide a familiar backdrop, while the hazelnut
@@ -171,7 +182,7 @@
 
     <div class="row">
       <div class="col-md-4 d-flex">
-        <div class="card mb-3 flex-fill">
+        <div class="card mb-3 flex-fill bg-dark text-light">
           <div class="card-body">
             <h3 class="card-title">Chocolate & Strawberry</h3>
             <p class="card-text">The pairing of chocolate and strawberry ice cream creates a luscious fusion of rich,
@@ -184,7 +195,7 @@
       </div>
 
       <div class="col-md-4 d-flex">
-        <div class="card mb-3 flex-fill">
+        <div class="card mb-3 flex-fill bg-dark text-light">
           <div class="card-body">
             <h3 class="card-title">Strawberry & Banana</h3>
             <p class="card-text">The combination of strawberry and banana ice cream creates a delicious symphony of
@@ -197,7 +208,7 @@
       </div>
 
       <div class="col-md-4 d-flex">
-        <div class="card mb-3 flex-fill">
+        <div class="card mb-3 flex-fill bg-dark text-light">
           <div class="card-body">
             <h3 class="card-title">Vanilla & Chocolate</h3>
             <p class="card-text">The pairing of vanilla and chocolate ice cream results in a classic and timeless flavor

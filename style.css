@@ -1,12 +1,19 @@
 body {
-  background-color: #343a40;
+  background-color: #0a4481;
   color: #ffffff;
+}
+
+h1 {
+  color: #7a1414;
+  font-weight: bold;
+  padding-bottom: 10px;
 }
 
 .container,
 .row,
 .carousel-inner {
-  background-color: #454d55;
+  background-color: #a8893a;
+  border-radius: 5px;
 }
 
 .image-container {
@@ -26,9 +33,8 @@ body {
   font-weight: bold;
 }
 
-/* Footer styling */
 footer {
-  background-color: #454d55;
+  background-color: #a8893a;
 }
 
 .nav-link {
