@@ -1,14 +1,25 @@
 body {
-  background-color: #343a40; /* Dark background color */
-  color: #ffffff; /* Light text color */
-  border-radius: 10px;
+  background-color: #343a40;
+  color: #ffffff;
 }
 
-.carousel-inner,
 .container,
-.row {
-  background-color: #454d55; /* Darker background color for these elements */
-  border-radius: 10px; /* Optional: Add border-radius for rounded corners */
+.row,
+.carousel-inner {
+  background-color: #454d55;
+}
+
+.image-container {
+  height: 300px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-container img {
+  max-width: 100%;
+  height: auto;
 }
 
 #result {
@@ -17,11 +28,9 @@ body {
 
 /* Footer styling */
 footer {
-  background-color: #454d55; /* Darker background color for the footer */
-  border-radius: 10px; /* Optional: Add border-radius for rounded corners */
+  background-color: #454d55;
 }
 
-/* Navigation links in the footer */
 .nav-link {
-  color: #ffffff !important; /* Override Bootstrap's default link color */
+  color: #ffffff !important;
 }
