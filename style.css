@@ -1,18 +1,24 @@
 body {
-  background-color: #0a4481;
+  background-color: #dcdcfc;
   color: #ffffff;
 }
 
 h1 {
-  color: #7a1414;
+  color: #db4242;
   font-weight: bold;
-  padding-bottom: 10px;
+  padding-bottom: 15px;
+  text-align: center;
+  text-decoration: underline;
+}
+
+p {
+  line-height: 1.6;
 }
 
 .container,
 .row,
 .carousel-inner {
-  background-color: #a8893a;
+  background-color: #2a3441;
   border-radius: 5px;
 }
 
@@ -31,10 +37,12 @@ h1 {
 
 #result {
   font-weight: bold;
+  line-height: 1.6;
+  text-align: center;
 }
 
 footer {
-  background-color: #a8893a;
+  background-color: #2a3441;
 }
 
 .nav-link {
