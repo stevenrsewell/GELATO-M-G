@@ -6,6 +6,7 @@ body {
 h1 {
   color: #db4242;
   font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
   padding-bottom: 15px;
   text-align: center;
   text-decoration: underline;
@@ -39,6 +40,19 @@ p {
   font-weight: bold;
   line-height: 1.6;
   text-align: center;
+}
+
+.photos-container {
+  display: flex;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.place-photo {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 5px;
 }
 
 footer {

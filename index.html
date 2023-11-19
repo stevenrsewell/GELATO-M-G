@@ -40,7 +40,7 @@
       </button>
     </div>
   </div>
-  
+
   <!-- End Header -->
 
   <!-- About -->
@@ -94,7 +94,7 @@
   </div>
 
   <!-- Mixology -->
-  <div id="mixologySection" class="container mt-2 mb-3 pt-2 pb-3 px-3">
+  <div id="mixologySection" class="container mt-2 pt-2 pb-3 px-3">
     <div class="row">
       <div class="col-md-12">
         <h1>Mixology</h1>
@@ -135,7 +135,7 @@
           <option value="banana">Banana</option>
         </select>
         <div class="image-container mt-2">
-          <img id="rightImage" class="img-fluid mt-3" src="" alt="">
+          <img id="rightImage" class="img-fluid mt-2" src="" alt="">
         </div>
       </div>
     </div>
@@ -143,7 +143,7 @@
   <!-- End Mixology -->
 
   <!-- Top Combination -->
-  <div id="topCombinations" class="container mt-2 pt-3">
+  <div id="topCombinations" class="container mt-2 pt-2">
     <div class="row">
       <div class="col-md-12">
         <h1>Top Combinations</h1>
@@ -230,9 +230,21 @@
   </div>
   <!-- End Combinations -->
 
+  <!-- Local Places -->
+  <div id="localPlaces" class="container mt-2 pt-2">
+    <h1>Find Gelato Near You</h1>
+    <div class="form-group">
+      <label for="zipCode">Enter Zip Code:</label>
+      <input type="text" class="form-control" id="zipCode" placeholder="Enter ZIP code">
+      <button type="button" class="btn btn-primary mt-2" onclick="searchPlaces()">Search</button>
+    </div>
+    <div id="results" class="mt-2 pb-3"></div>
+  </div>
+  <!-- End Local Places -->
+
   <!-- Footer -->
   <div class="container">
-    <footer class="d-flex justify-content-between align-items-center py-3 my-4">
+    <footer class="d-flex justify-content-between align-items-center py-2 my-2">
       <div class="col-md-6">
         <p class="mb-0">&copy; 2023 <b>GELATO-M-G!</b></p>
       </div>
@@ -242,6 +254,7 @@
           <li class="nav-item"><a href="#aboutSection" class="nav-link px-2 text-muted">About</a></li>
           <li class="nav-item"><a href="#mixologySection" class="nav-link px-2 text-muted">Mixology</a></li>
           <li class="nav-item"><a href="#topCombinations" class="nav-link px-2 text-muted">Top Combinations</a></li>
+          <li class="nav-item"><a href="#localPlaces" class="nav-link px-2 text-muted">Find Gelato</a></li>
         </ul>
       </div>
     </footer>
@@ -259,6 +272,9 @@
 
   <!-- Custom JavaScript -->
   <script src="script.js"></script>
+  <script src="combinations.js"></script>
+  <script src="yelp.js"></script>
+
 
 </body>
 
