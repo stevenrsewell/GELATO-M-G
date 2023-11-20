@@ -12,6 +12,8 @@
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <!-- Custom CSS -->
   <link rel="stylesheet" href="style.css">
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 
 <body>
@@ -101,7 +103,7 @@
       </div>
     </div>
     <div class="row align-items-center">
-      <div class="col-md-4">
+      <div class="col-md-4" data-aos="zoom-in">
         <label for="dropdown1">Flavor 1:</label>
         <select class="form-control bg-dark text-light" id="dropdown1" onchange="updateImages(); updateText();">
           <option value="" selected disabled>Please select</option>
@@ -121,7 +123,7 @@
       <div class="col-md-4">
         <div id="result"></div>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4" data-aos="zoom-in">
         <label for="dropdown2">Flavor 2:</label>
         <select class="form-control bg-dark text-light" id="dropdown2" onchange="updateImages(); updateText();">
           <option value="" selected disabled>Please select</option>
@@ -152,7 +154,7 @@
     <div class="row">
       <div class="col-md-4 d-flex">
         <div class="card mb-3 flex-fill bg-dark text-light">
-          <div class="card-body">
+          <div class="card-body" data-aos="flip-up" data-aos-duration="700">
             <h3 class="card-title">Mint Chocolate & Coffee</h3>
             <p class="card-text">The combination of mint chocolate chip and coffee ice cream creates a tantalizing
               contrast of cool, refreshing mint with the bold richness of coffee. Together, they form a dynamic duo that
@@ -164,7 +166,7 @@
 
       <div class="col-md-4 d-flex">
         <div class="card mb-3 flex-fill bg-dark text-light">
-          <div class="card-body">
+          <div class="card-body" data-aos="flip-up" data-aos-duration="700">
             <h3 class="card-title">Chocolate & Banana</h3>
             <p class="card-text">This combination offers a delightful harmony of rich cocoa and sweet, creamy banana
               flavors. The velvety chocolate contributes a decadent and slightly bitter note, while the natural
@@ -177,7 +179,7 @@
 
       <div class="col-md-4 d-flex">
         <div class="card mb-3 flex-fill bg-dark text-light">
-          <div class="card-body">
+          <div class="card-body" data-aos="flip-up" data-aos-duration="700">
             <h3 class="card-title">Vanilla & Hazelnut</h3>
             <p class="card-text">The smooth, classic vanilla undertones provide a familiar backdrop, while the hazelnut
               adds a subtle, toasty flavor that elevates the overall taste experience. This combination strikes a
@@ -191,7 +193,7 @@
     <div class="row">
       <div class="col-md-4 d-flex">
         <div class="card mb-3 flex-fill bg-dark text-light">
-          <div class="card-body">
+          <div class="card-body" data-aos="flip-up" data-aos-duration="700">
             <h3 class="card-title">Chocolate & Strawberry</h3>
             <p class="card-text">The pairing of chocolate and strawberry ice cream creates a luscious fusion of rich,
               velvety cocoa and sweet, juicy berry goodness. The deep, indulgent chocolate notes complement the vibrant
@@ -204,7 +206,7 @@
 
       <div class="col-md-4 d-flex">
         <div class="card mb-3 flex-fill bg-dark text-light">
-          <div class="card-body">
+          <div class="card-body" data-aos="flip-up" data-aos-duration="700">
             <h3 class="card-title">Strawberry & Banana</h3>
             <p class="card-text">The combination of strawberry and banana ice cream creates a delicious symphony of
               sweet and fruity flavors. The natural sweetness of ripe strawberries blends seamlessly with the creamy,
@@ -217,7 +219,7 @@
 
       <div class="col-md-4 d-flex">
         <div class="card mb-3 flex-fill bg-dark text-light">
-          <div class="card-body">
+          <div class="card-body" data-aos="flip-up" data-aos-duration="700">
             <h3 class="card-title">Vanilla & Chocolate</h3>
             <p class="card-text">The pairing of vanilla and chocolate ice cream results in a classic and timeless flavor
               combination. The sweet, creamy vanilla provides a smooth and mellow base, while the rich and decadent
@@ -235,7 +237,7 @@
     <h1>Find Gelato Near You</h1>
     <div class="form-group">
       <label for="zipCode">Enter Zip Code:</label>
-      <input type="text" class="form-control" id="zipCode" placeholder="Enter ZIP code">
+      <input type="text" class="form-control bg-dark text-light" id="zipCode" placeholder="Enter ZIP code">
       <button type="button" class="btn btn-primary mt-2" onclick="searchPlaces()">Search</button>
     </div>
     <div id="results" class="mt-2 pb-3"></div>
@@ -274,7 +276,11 @@
   <script src="script.js"></script>
   <script src="combinations.js"></script>
   <script src="yelp.js"></script>
-
+  <!-- AOS -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 
 </body>
 
