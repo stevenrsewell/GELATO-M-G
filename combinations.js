@@ -71,9 +71,20 @@ var presetTexts = {
   
     // Check if the combination key exists in the presetTexts object
     if (presetTexts.hasOwnProperty(combinationKey)) {
-      // Display the corresponding preset text
-      resultDiv.innerHTML = presetTexts[combinationKey];
-    } else {
-      resultDiv.innerHTML = "Please select two unique flavors.";
+      var newText = presetTexts[combinationKey];
+  
+      // Fade out the text
+      resultDiv.classList.remove("fade-in");
+      resultDiv.classList.add("fade-out");
+  
+      // Set a small timeout to change the text and then fade it back in
+      setTimeout(function () {
+        resultDiv.innerHTML = newText;
+  
+        // Fade in the text
+        resultDiv.classList.remove("fade-out");
+        resultDiv.classList.add("fade-in");
+      }, 300); // Adjust this timeout value as needed (milliseconds)
     }
   }
+  
