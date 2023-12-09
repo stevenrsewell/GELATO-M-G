@@ -378,6 +378,11 @@
   </footer>
   <!-- End Footer -->
 
+  <!-- Custom JavaScript -->
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+  <script src="combinations.js"></script>
+  
   <!-- Bootstrap JS and Popper.js -->
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
@@ -387,10 +392,15 @@
     integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
     crossorigin="anonymous"></script>
   <!-- Google API -->
-
-  <!-- Custom JavaScript -->
-  <script src="script.js"></script>
-  <script src="combinations.js"></script>
+  <script>
+    const loadGoogleMaps = () => {
+      const script = document.createElement('script');
+      script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&libraries=places`;
+      script.defer = true;
+      document.head.appendChild(script);
+    };
+    loadGoogleMaps();
+  </script>
 
   <!-- AOS -->
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
