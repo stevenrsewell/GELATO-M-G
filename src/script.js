@@ -150,59 +150,51 @@ function getPlaceDetails(place) {
 }
 
 function addToPlacesList(placeDetails) {
-  var gallery = document.getElementById('gallery');
+  var placesList = document.getElementById('placesList');
+  var placeItem = document.createElement('div');
+  placeItem.classList.add('place-item');
 
-  // Check if photos are available
-  if (placeDetails.photos) {
-    for (var i = 0; i < placeDetails.photos.length; i++) {
-      var photo = placeDetails.photos[i];
-      var imageUrl = photo.getUrl({ maxWidth: 300, maxHeight: 300 });
+  var address = placeDetails.formatted_address || 'Address not available';
+  var openingHours = placeDetails.opening_hours ? placeDetails.opening_hours : 'Hours not available';
+  var isOpen = openingHours ? (openingHours.isOpen() ? 'Open' : 'Closed') : 'Hours not available';
+  var openStatusClass = isOpen === 'Open' ? 'open' : 'closed';
 
-      // Create thumbnail elements
-      var thumbnail = document.createElement('div');
-      thumbnail.classList.add('col-md-4', 'd-flex');
+  var placeContent = `
+    <h3>${placeDetails.name}</h3>
+    <p>Rating: ${placeDetails.rating ? placeDetails.rating : 'N/A'}</p>
+    <p>Address: ${address}</p>
+    <p>Status: <span class="${openStatusClass}">${isOpen}</span></p>
+    <p>Operating Hours:</p>
+    <p>${getFormattedHours(openingHours)}</p>
+    <div class="photos"></div>
+  `;
+  placeItem.innerHTML = placeContent;
 
-      var thumbnailImg = document.createElement('img');
-      thumbnailImg.classList.add('place-photo', 'thumbnail-img');
-      thumbnailImg.src = imageUrl;
-      thumbnailImg.setAttribute('data-target', `#photo-${i}`);
-      thumbnailImg.setAttribute('data-toggle', 'modal');
-      thumbnailImg.setAttribute('data-slide-to', `${i}`);
-      thumbnail.appendChild(thumbnailImg);
+  placesList.appendChild(placeItem);
 
-      gallery.appendChild(thumbnail);
+if (placeDetails.photos) {
+    var photosDiv = placeItem.querySelector('.photos');
+    var rowDiv = document.createElement('div');
+    rowDiv.classList.add('row', 'justify-content-center');
 
-      // Create modal for full-sized images
-      var modal = createModal(photo, i);
-      document.body.appendChild(modal);
+    for (var j = 0; j < placeDetails.photos.length; j++) {
+      var photo = document.createElement('img');
+      var thumbnailUrl = placeDetails.photos[j].getUrl({ maxWidth: 100, maxHeight: 100 }); // Generating thumbnail URL
+      var fullSizeUrl = placeDetails.photos[j].getUrl({ maxWidth: 800, maxHeight: 800 }); // Full-size URL for onclick event
+
+      photo.src = thumbnailUrl;
+      photo.classList.add('img-fluid', 'thumbnail-img', 'col-6', 'col-md-3', 'col-lg-2'); // Bootstrap grid classes
+
+      // Attach click event to open full-size image
+      photo.addEventListener('click', function() {
+        window.open(fullSizeUrl, '_blank');
+      });
+
+      rowDiv.appendChild(photo);
     }
+
+    photosDiv.appendChild(rowDiv);
   }
-}
-
-function createModal(photo, index) {
-  var modal = document.createElement('div');
-  modal.classList.add('modal', 'fade');
-  modal.id = `photo-${index}`;
-
-  var modalDialog = document.createElement('div');
-  modalDialog.classList.add('modal-dialog');
-
-  var modalContent = document.createElement('div');
-  modalContent.classList.add('modal-content');
-
-  var modalBody = document.createElement('div');
-  modalBody.classList.add('modal-body');
-
-  var fullImage = document.createElement('img');
-  fullImage.src = photo.getUrl({ maxWidth: 800, maxHeight: 600 });
-  fullImage.classList.add('img-fluid');
-
-  modalBody.appendChild(fullImage);
-  modalContent.appendChild(modalBody);
-  modalDialog.appendChild(modalContent);
-  modal.appendChild(modalDialog);
-
-  return modal;
 }
 
 function getFormattedHours(openingHours) {
