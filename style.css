@@ -145,13 +145,13 @@ footer {
 /* Map Styling */
 #map {
   height: 400px;
-  width: 50%;
+  width: 100%;
   float: left;
 }
 
 #placesList {
   height: 400px;
-  width: 50%;
+  width: 100%;
   overflow-y: scroll;
 }
 
