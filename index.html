@@ -271,8 +271,12 @@
       </div>
     </div>
     <div class="row">
-      <div id="map" class="col-md-6"></div>
+      <!-- On larger screens, map and placesList side by side -->
+      <div id="map" class="col-md-6 d-none d-md-block"></div>
       <div id="placesList" class="col-md-6 overflow-auto"></div>
+      <!-- On smaller screens, map above placesList -->
+      <div id="map" class="col-12 d-block d-md-none"></div>
+      <div id="placesList" class="col-12"></div>
     </div>
   </div>
   <!-- End Local Places -->
