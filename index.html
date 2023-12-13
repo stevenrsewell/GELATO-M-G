@@ -271,12 +271,19 @@
       </div>
     </div>
     <div class="row">
-      <!-- On larger screens, map and placesList side by side -->
-      <div id="map" class="col-md-6 d-none d-md-block"></div>
-      <div id="placesList" class="col-md-6 overflow-auto"></div>
-      <!-- On smaller screens, map above placesList -->
-      <div id="map" class="col-12 d-block d-md-none"></div>
-      <div id="placesList" class="col-12"></div>
+      <div class="col-md-12">
+        <!-- Container for map and business information -->
+        <div class="row">
+          <!-- Map container -->
+          <div class="col-md-12 col-lg-6 order-lg-1 order-2" id="mapContainer">
+            <div id="map" style="height: 400px;"></div>
+          </div>
+          <!-- Business information container -->
+          <div class="col-md-12 col-lg-6 order-lg-2 order-1" id="infoContainer">
+            <div id="placesList" class="overflow-auto"></div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <!-- End Local Places -->
