@@ -192,3 +192,19 @@ footer {
 .closed {
   color: red;
 }
+
+/* CSS for larger screens */
+@media (min-width: 768px) {
+  #mapContainer,
+  #infoContainer {
+    width: 50%;
+  }
+}
+
+/* CSS for smaller screens */
+@media (max-width: 767.98px) {
+  #mapContainer,
+  #infoContainer {
+    width: 100%;
+  }
+}
