@@ -42,7 +42,7 @@ function updateImages(dropdownId) {
     leftImage.classList.add('fade-out');
 
     // Update leftImage source after a shorter delay
-    setTimeout(function() {
+    setTimeout(function () {
       leftImage.src = `img/${selectedValue1}.jpg`;
 
       // Apply fade-in effect to leftImage after updating the source
@@ -55,7 +55,7 @@ function updateImages(dropdownId) {
     rightImage.classList.add('fade-out');
 
     // Update rightImage source after a shorter delay
-    setTimeout(function() {
+    setTimeout(function () {
       rightImage.src = `img/${selectedValue2}.jpg`;
 
       // Apply fade-in effect to rightImage after updating the source
@@ -82,71 +82,71 @@ var infowindow;
 var previousZip = '';
 
 function findPlaces() {
-    var zipCode = document.getElementById('zipCode').value.trim();
-    if (zipCode === previousZip) {
-        return; // Same zip code, no need to search again
+  var zipCode = document.getElementById('zipCode').value.trim();
+  if (zipCode === previousZip) {
+    return; // Same zip code, no need to search again
+  }
+
+  previousZip = zipCode;
+  var geocoder = new google.maps.Geocoder();
+  geocoder.geocode({ 'address': zipCode }, function (results, status) {
+    if (status == google.maps.GeocoderStatus.OK) {
+      var latitude = results[0].geometry.location.lat();
+      var longitude = results[0].geometry.location.lng();
+      var mapOptions = {
+        center: new google.maps.LatLng(latitude, longitude),
+        zoom: 12
+      };
+      map = new google.maps.Map(document.getElementById('map'), mapOptions);
+      infowindow = new google.maps.InfoWindow();
+      service = new google.maps.places.PlacesService(map);
+      var request = {
+        location: map.getCenter(),
+        radius: '5000',
+        keyword: 'gelato ice cream'
+      };
+      service.nearbySearch(request, callback);
+    } else {
+      alert('Geocode was not successful for the following reason: ' + status);
     }
+  });
 
-    previousZip = zipCode;
-    var geocoder = new google.maps.Geocoder();
-    geocoder.geocode({ 'address': zipCode }, function (results, status) {
-        if (status == google.maps.GeocoderStatus.OK) {
-            var latitude = results[0].geometry.location.lat();
-            var longitude = results[0].geometry.location.lng();
-            var mapOptions = {
-                center: new google.maps.LatLng(latitude, longitude),
-                zoom: 12
-            };
-            map = new google.maps.Map(document.getElementById('map'), mapOptions);
-            infowindow = new google.maps.InfoWindow();
-            service = new google.maps.places.PlacesService(map);
-            var request = {
-                location: map.getCenter(),
-                radius: '5000',
-                keyword: 'gelato ice cream'
-            };
-            service.nearbySearch(request, callback);
-        } else {
-            alert('Geocode was not successful for the following reason: ' + status);
-        }
-    });
-
-    clearPlacesList();
+  clearPlacesList();
 }
 
 function clearPlacesList() {
-    var placesList = document.getElementById('placesList');
-    placesList.innerHTML = '';
+  var placesList = document.getElementById('placesList');
+  placesList.innerHTML = '';
 }
 
 function callback(results, status) {
-    if (status == google.maps.places.PlacesServiceStatus.OK) {
-        for (var i = 0; i < results.length; i++) {
-            createMarker(results[i]);
-            getPlaceDetails(results[i]);
-        }
+  if (status == google.maps.places.PlacesServiceStatus.OK) {
+    for (var i = 0; i < results.length; i++) {
+      createMarker(results[i]);
+      getPlaceDetails(results[i]);
     }
+  }
 }
 
 function createMarker(place) {
-    var marker = new google.maps.Marker({
-        map: map,
-        position: place.geometry.location
-    });
-    google.maps.event.addListener(marker, 'click', function() {
-        infowindow.setContent(place.name);
-        infowindow.open(map, this);
-    });
+  var marker = new google.maps.Marker({
+    map: map,
+    position: place.geometry.location
+  });
+  google.maps.event.addListener(marker, 'click', function () {
+    infowindow.setContent(place.name);
+    infowindow.open(map, this);
+  });
 }
 
 function getPlaceDetails(place) {
-    service.getDetails({
-        placeId: place.place_id
-    }, function(placeDetails, status) {
-        if (status === google.maps.places.PlacesServiceStatus.OK) {
-            addToPlacesList(placeDetails);
-        }
-    });
+  service.getDetails({
+    placeId: place.place_id
+  }, function (placeDetails, status) {
+    if (status === google.maps.places.PlacesServiceStatus.OK) {
+      addToPlacesList(placeDetails);
+    }
+  });
 }
 
 function addToPlacesList(placeDetails) {
@@ -172,7 +172,7 @@ function addToPlacesList(placeDetails) {
 
   placesList.appendChild(placeItem);
 
-if (placeDetails.photos) {
+  if (placeDetails.photos) {
     var photosDiv = placeItem.querySelector('.photos');
     var rowDiv = document.createElement('div');
     rowDiv.classList.add('row', 'justify-content-center');
@@ -186,7 +186,7 @@ if (placeDetails.photos) {
       photo.classList.add('img-fluid', 'thumbnail-img', 'col-6', 'col-md-3', 'col-lg-2'); // Bootstrap grid classes
 
       // Attach click event to open full-size image
-      photo.addEventListener('click', function() {
+      photo.addEventListener('click', function () {
         window.open(fullSizeUrl, '_blank');
       });
 
@@ -207,7 +207,7 @@ function getFormattedHours(openingHours) {
 
   for (var i = 0; i < days.length; i++) {
     var day = days[i];
-    var hours = openingHours.weekday_text.find(function(item) {
+    var hours = openingHours.weekday_text.find(function (item) {
       return item.startsWith(day);
     });
 

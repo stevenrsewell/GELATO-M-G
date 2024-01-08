@@ -122,8 +122,6 @@ p {
   /* Set accordion body text color to white */
 }
 
-
-
 footer {
   background-color: #2a3441;
 }
@@ -153,6 +151,7 @@ footer {
   height: 400px;
   width: 100%;
   overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .place-item {
@@ -195,6 +194,7 @@ footer {
 
 /* CSS for larger screens */
 @media (min-width: 768px) {
+
   #mapContainer,
   #infoContainer {
     width: 50%;
@@ -203,6 +203,7 @@ footer {
 
 /* CSS for smaller screens */
 @media (max-width: 767.98px) {
+
   #mapContainer,
   #infoContainer {
     width: 100%;
