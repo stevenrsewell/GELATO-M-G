@@ -1,6 +1,9 @@
 # GELATO-M-G!
 GELATO-M-G! is an interactive ice cream and gelato mixology website for dessert enthusiasts. It allows users to select two flavors of Gelato, and will provide information about how well those flavors taste together. All images are open source images from Pexels.
 
+## Live Web Address
+[gelatomg.com](https://gelatomg.com/)
+
 ## Dependencies
 + [Bootstrap](https://getbootstrap.com/)
 + [Animate On Scroll](https://michalsnik.github.io/aos/)
